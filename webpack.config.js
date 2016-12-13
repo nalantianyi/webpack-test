@@ -18,5 +18,11 @@ module.exports = {
         new HtmlwebpackPlugin({
             title: 'Hello World app'
         })
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true,
+        hot: true,
+        inline: true,
+        progress: true
+    }
 };

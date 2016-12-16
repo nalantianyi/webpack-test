@@ -27,6 +27,14 @@ module.exports = {
         progress: true
     },
     module: {
+        preLoaders: [
+            {
+                test: /\.jsx?$/,
+                include: APP_PATH,
+                exclude: /node_modules/,
+                loader: 'jshint-loader'
+            }
+        ],
         loaders: [
             {
                 test: /\.scss$/,
@@ -48,5 +56,8 @@ module.exports = {
 
 
         ]
+    },
+    jshint: {
+        esnext: true
     }
 };

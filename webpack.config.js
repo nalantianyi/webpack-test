@@ -10,6 +10,7 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports = {
     entry: APP_PATH,
+    devtool: 'eval-source-map',
     output: {
         path: BUILD_PATH,
         filename: 'bundle.js'

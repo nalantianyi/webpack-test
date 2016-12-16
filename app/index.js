@@ -1,9 +1,16 @@
 /**
  * Created by nalantianyi on 2016/12/13.
  */
-var sub = require('./sub');
-require('./main.css');
-var app = document.createElement('div');
-app.innerHTML = '<h1>小鸡的 webpack 示例</h1>';
-app.appendChild(sub());
+import './main.scss';
+import generateText from './sub';
+import  $ from 'jquery';
+import  moment from 'moment';
+
+let app=document.createElement('div');
+const myPromise=Promise.resolve(42);
+myPromise.then((number)=>{
+    $('body').append('<p>promise result is'+number+' now is '+moment().format('YYYY-MM-DD HH:mm:ss')+'</p>');
+});
+app.innerHTML='<h1>Hello World it</h1>';
 document.body.appendChild(app);
+app.appendChild(generateText());

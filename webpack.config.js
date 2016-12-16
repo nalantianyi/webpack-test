@@ -25,13 +25,27 @@ module.exports = {
         inline: true,
         progress: true
     },
-    module:{
-        loaders:[
+    module: {
+        loaders: [
             {
-                test:/\.css$/,
-                loaders:['style','css'],
-                include:APP_PATH
-            }
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'sass'],
+                include: APP_PATH
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url?limit=40000'
+            },
+            {
+                test: /\.jsx?$/,
+                loader: 'babel',
+                include: APP_PATH,
+                query: {
+                    presets: ['es2015']
+                }
+            },
+
+
         ]
     }
 };

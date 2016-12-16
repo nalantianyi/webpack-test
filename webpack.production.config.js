@@ -19,7 +19,7 @@ module.exports = {
     },
     output: {
         path: BUILD_PATH,
-        filename: '[name].js'
+        filename: '[name].[hash].js'
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({minimize: true}),
